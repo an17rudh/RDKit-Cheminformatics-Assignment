@@ -3,7 +3,7 @@ A comprehensive Jupyter Notebook-based assignment demonstrating molecular descri
 
 ## 📋 Project Overview
 
-This project implements a complete cheminformatics pipeline covering:
+This project implements a cheminformatics workflow covering:
 - **Part A**: Data curation and fingerprint generation
 - **Part B**: Generation of multiple fingerprint types and 2D molecular descriptors
 - **Part C**: Data cleaning and statistical preprocessing (scaling & standardization)
@@ -11,31 +11,10 @@ This project implements a complete cheminformatics pipeline covering:
 
 ## 🎯 Objectives
 
-- Practice molecular data curation and validation
-- Generate various types of molecular fingerprints (MACCS, Morgan/ECFP, Atom Pair, Topological Torsion, Pharmacophore)
-- Compute RDKit 2D numerical descriptors
-- Apply min-max normalization and Z-score standardization
-
-## 📁 Repository Structure
-
-```
-assignment-1-rdkit/
-├── README.md                          # This file
-├── Assignment_1.ipynb                 # Main Jupyter Notebook
-├── descriptor_functions.py            # Reusable helper functions
-├── .gitignore                         # Git ignore rules
-├── data/                              # Input datasets (add locally)
-│   ├── dataset_1.csv                  # Molecular data with SMILES
-│   └── dataset_2.csv                  # Numerical descriptor data
-└── outputs/                           # Generated output files
-    ├── macckeys_output.csv
-    ├── ecfp_output.csv
-    ├── atom_pair_output.csv
-    ├── topological_torsion_output.csv
-    ├── pharmacophore_fp_output.csv
-    ├── descriptors_2d_output.csv
-    └── rdkit_2d_descriptors_standardized_output.csv
-```
+- Practice molecular data curation and validation.
+- Generate various types of molecular fingerprints (MACCS, Morgan/ECFP, Atom Pair, Topological Torsion, Pharmacophore).
+- Compute RDKit 2D numerical descriptors.
+- Apply min-max normalization and Z-score standardization.
 
 ## 📊 Assignment Breakdown
 
@@ -72,11 +51,22 @@ Two key functions implemented:
 
 ```python
 def compute_rdkit_2d_descriptors(csv_file_path)
-    # Takes SMILES CSV → Returns DataFrame with 2D descriptors for given SMILWS
+    # Takes SMILES CSV (path_file)→ Returns DataFrame with 2D descriptors for given SMILES
 
 def standardize_descriptors(raw_descriptors_df_csv_file_path)
-    # Takes raw descriptors → Returns normalized & standardized descriptors in the form of a DataFrame
+    # Takes raw descriptors (path_file) → Returns normalized & standardized descriptors in the form of a DataFrame
 ```
+
+## 💻 Code Structure
+
+### Notebook Sections
+
+| Section | Description | Input | Output |
+|---------|-------------|-------|--------|
+| **Part A** | Data Curation & MACCS FP | dataset_1.csv | macckeys_output.csv |
+| **Part B** | Fingerprints & Descriptors | Cleaned molecules | FP CSVs + descriptor CSV |
+| **Part C** | Scaling & Standardization | dataset_2.csv | Standardized CSV |
+| **Part D** | Reusable Functions | CSV files | DataFrames |
 
 ## 🛠️ Setup
 
@@ -104,7 +94,7 @@ def standardize_descriptors(raw_descriptors_df_csv_file_path)
    - Fingerprints stored as bit strings in CSV for readability.
 
 4. **Descriptor Scope**:
-   - All 217 RDKit Descriptors_v2 
+   - All 217 RDKit Descriptors_v2. 
    - Descriptors computed for valid molecules only.
 
 5. **Scaling Strategy**:
@@ -116,82 +106,44 @@ def standardize_descriptors(raw_descriptors_df_csv_file_path)
    - Part A: Rows with missing SMILES or LABELS are dropped.
    - Part C: Columns and Rows with ANY missing or infinite values are dropped.
 
-### Workflow
-
-```
-Load Dataset
-    ↓
-Data Curation (Remove NaN, validate SMILES)
-    ↓
-Generate Fingerprints (5 types)
-    ↓
-Calculate 2D Descriptors
-    ↓
-Save Outputs
-    ↓
-[Separate Flow for Dataset 2]
-    ↓
-Clean Descriptors (remove inf, drop missing)
-    ↓
-Apply Min-Max Normalization
-    ↓
-Apply Z-score Standardization
-    ↓
-Save Standardized Data
-```
-
-## 💻 Code Structure
-
-### Notebook Sections
-
-| Section | Description | Input | Output |
-|---------|-------------|-------|--------|
-| **Part A** | Data Curation & MACCS FP | dataset_1.csv | macckeys_output.csv |
-| **Part B** | Fingerprints & Descriptors | Cleaned molecules | 5 FP CSVs + descriptor CSV |
-| **Part C** | Scaling & Standardization | dataset_2.csv | Standardized CSV |
-| **Part D** | Reusable Functions | CSV files | DataFrames |
-
-
-
-## 🔍 Data Quality Notes
+## 🔍 Notes on Data
 
 - **Dataset_1**: 643 molecules after cleaning (0 invalid SMILES in given data).
 - ***Dataset_2**: 217 molecular descriptors computed; 205 remain after cleaning.
-- **Fingerprints**: All 2048-bit representations for consistency (except MACCs.
-
+- **Fingerprints**: All 2048-bit representations for consistency (except MACCS).
 
 ## 📚 References
 
-- [RDKit Documentation](https://www.rdkit.org/)
-- Descriptors: [RDKit Descriptors](https://www.rdkit.org/docs/GettingStartedInPython.html#list-of-available-descriptors)
-- Fingerprints: [RDKit Fingerprints](https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprints-and-molecular-similarity)
-- Scikit-learn: [Preprocessing](https://scikit-learn.org/stable/modules/preprocessing.html)
+
+### Official Documentation
+- [RDKit Documentation](https://www.rdkit.org/) - Comprehensive guide to RDKit cheminformatics toolkit
+- [RDKit Descriptors](https://www.rdkit.org/docs/GettingStartedInPython.html#list-of-available-descriptors) - List of available molecular descriptors
+- [RDKit Fingerprints](https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprints-and-molecular-similarity) - Guide to fingerprint generation and similarity calculations
+- [Scikit-learn Preprocessing](https://scikit-learn.org/stable/modules/preprocessing.html) - Documentation for scaling and standardization methods
+
+### Educational Resources
+- [Molecular Fingerprints with Python and RDKit for AI Models](https://zoehlerbz.medium.com/representation-of-molecular-fingerprints-with-python-and-rdkit-for-ai-models-8b146bcf3230) - Guide to understanding fingerprint representations and their applications in machine learning models. Provides practical examples of different fingerprint types and their use in molecular similarity calculations.
+
+- [Extracting 200+ RDKit Features for Machine Learning](https://medium.com/@hamidhadipour74/unlocking-molecular-insights-a-comprehensive-guide-to-extracting-200-rdkit-features-for-machine-e43c619bec46) - Detailed guide on how to normalize and standardize molecular descriptors in the context of descriptor extraction and data preprocessing. Covers best practices for preparing molecular data for machine learning pipelines.
+
+- [RDKit 2D Descriptors Guide](https://xinhaoli74.github.io/blog/rdkit/2021/01/06/rdkit.html#RDKit-2D-Descriptors) - Breif explaination on how different functions are utilized with RDKit, particularly 2D Descriptors.
+
+### Research References
+- [Gobbi, A. and Poppinger, D. (2000).](https://doi.org/10.1002/(SICI)1097-0290(199824)61:1%3C47::AID-BIT9%3E3.0.CO;2-Z) - "Genetic optimization of combinatorial libraries" : Feature definitions for 2D pharmacophore fingerprints used in this assignment.
 
 ## 📝 License
 
-This assignment is provided for educational purposes.
+This assignment is done for educational purposes.
+
+## 🙏 Acknowledgments
+
+This repository structure and documentation were organized and created with assistance from **[Perplexity AI](https://www.perplexity.ai/)**.
 
 ## 👤 Author
 
-- **Your Name** / Your GitHub Handle
-- **Date**: January 2026
-- **Course**: [Your Course Name]
+- **Anirudh** / Your GitHub Handle
+- **Date**: January 6, 2026
 
-## ❓ FAQ
-
-**Q: Do I need the dataset files?**  
-A: Yes, place `dataset_1.csv` and `dataset_2.csv` in the `data/` folder before running.
-
-**Q: Can I modify the fingerprint parameters?**  
-A: Yes! Edit the radius, nBits, or fpSize parameters in Part B cells.
-
-**Q: What if I have invalid SMILES?**  
-A: The notebook will print their indices and remove them. Check console output.
-
-**Q: How do I use the reusable functions?**  
-A: Import from `descriptor_functions.py` and call with your CSV paths.
-
----
 
 **Last Updated**: January 6, 2026
 
