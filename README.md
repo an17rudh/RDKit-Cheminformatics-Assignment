@@ -126,7 +126,7 @@ def standardize_descriptors(raw_descriptors_df_csv_file_path)
 
 - [Extracting 200+ RDKit Features for Machine Learning](https://medium.com/@hamidhadipour74/unlocking-molecular-insights-a-comprehensive-guide-to-extracting-200-rdkit-features-for-machine-e43c619bec46) - Detailed guide on how to normalize and standardize molecular descriptors in the context of descriptor extraction and data preprocessing. Covers best practices for preparing molecular data for machine learning pipelines.
 
-- [RDKit 2D Descriptors Guide](https://xinhaoli74.github.io/blog/rdkit/2021/01/06/rdkit.html#RDKit-2D-Descriptors) - Breif explaination on how different functions are utilized with RDKit, particularly 2D Descriptors.
+- [RDKit Cheatsheet](https://xinhaoli74.github.io/blog/rdkit/2021/01/06/rdkit.html#RDKit-2D-Descriptors) - Breif explaination on how different functions are utilized with RDKit, particularly 2D Descriptors.
 
 ### Research References
 - [Gobbi, A. and Poppinger, D. (2000).](https://doi.org/10.1002/(SICI)1097-0290(199824)61:1%3C47::AID-BIT9%3E3.0.CO;2-Z) - "Genetic optimization of combinatorial libraries" : Feature definitions for 2D pharmacophore fingerprints used in this assignment.
