@@ -141,7 +141,7 @@ This repository structure and documentation were organized and created with assi
 
 ## 👤 Author
 
-- **Anirudh** / Your GitHub Handle
+- **Anirudh** / [an17rudh](https://github.com/an17rudh)
 - **Date**: January 6, 2026
 
 
