@@ -65,7 +65,7 @@ def standardize_descriptors(raw_descriptors_df_csv_file_path)
 |---------|-------------|-------|--------|
 | **Part A** | Data Curation & MACCS FP | dataset_1.csv | macckeys_output.csv |
 | **Part B** | Fingerprints & Descriptors | Cleaned molecules | FP CSVs + descriptor CSV |
-| **Part C** | Scaling & Standardization | dataset_2.csv | Standardized CSV |
+| **Part C** | Scaling & Standardization | dataset_2.csv | Standardized DataFrame |
 | **Part D** | Reusable Functions | CSV files | DataFrames |
 
 ## 🛠️ Setup
