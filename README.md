@@ -109,7 +109,7 @@ def standardize_descriptors(raw_descriptors_df_csv_file_path)
 ## 🔍 Notes on Data
 
 - **Dataset_1**: 643 molecules after cleaning (0 invalid SMILES in given data).
-- ***Dataset_2**: 217 molecular descriptors computed; 205 remain after cleaning.
+- **Dataset_2**: 217 molecular descriptors computed; 205 remain after cleaning.
 - **Fingerprints**: All 2048-bit representations for consistency (except MACCS).
 
 ## 📚 References
