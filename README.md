@@ -138,14 +138,14 @@ This assignment is done for educational purposes.
 
 ## 🙏 Acknowledgments
 
-This repository structure and documentation were organized and created with assistance from **[Perplexity AI](https://www.perplexity.ai/)**.
+This repository structure and documentation alongside comments on the code were organized and created with assistance from **[Perplexity AI](https://www.perplexity.ai/)**.
 
 ## 👤 Author
 
 - **Anirudh** / [an17rudh](https://github.com/an17rudh)
 - **Date**: January 6, 2026
 
-# Code Update Documentation: v1.0 → v2.0
+# Code Update Documentation: v1 → v2
 
 
 ## Part A: Dataset 1 – Data Cleaning & Validation
